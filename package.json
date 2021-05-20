@@ -1,0 +1,40 @@
+{
+  "name": "axios-pluginify",
+  "version": "1.0.0",
+  "description": "",
+  "types": "types",
+  "main": "es",
+  "module": "es",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "axios": "^0.21.1",
+    "axios-cache-adapter": "^2.7.3",
+    "axios-mock-adapter": "^1.19.0",
+    "axios-retry": "^3.1.9",
+    "typescript": "^4.2.4"
+  },
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uioz/axios-pluginify.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "uioz",
+    "url": "https://github.com/uioz",
+    "email": "hzxbpld@163.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uioz/axios-pluginify/issues"
+  },
+  "homepage": "https://github.com/uioz/axios-pluginify#readme"
+}
