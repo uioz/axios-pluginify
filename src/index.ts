@@ -1,5 +1,5 @@
-import { AxiosStatic, AxiosInstance, AxiosRequestConfig } from "axios";
-export * from "./plugins";
+import { AxiosStatic, AxiosInstance, AxiosRequestConfig } from 'axios';
+export * from './plugins';
 
 type beforeCreateHook = (
   config: AxiosRequestConfig,
@@ -14,15 +14,15 @@ export interface AxiosPlugin {
 }
 
 export interface DefinePlugin extends AxiosPlugin {
-  apply: (...args: any) => void;
+  apply: (...args: Array<unknown>) => void;
 }
 
 export function definePlugin<T extends DefinePlugin>(
   plugin: T
-): { this: T; new (...args: Parameters<T["apply"]>): AxiosPlugin } {
+): { this: T; new (...args: Parameters<T['apply']>): AxiosPlugin } {
   return function pluginWrapper(
-    this: any,
-    ...args: Parameters<typeof plugin["apply"]>
+    this: AxiosPlugin,
+    ...args: Parameters<typeof plugin['apply']>
   ) {
     plugin.apply.apply(this, args);
 
@@ -32,6 +32,7 @@ export function definePlugin<T extends DefinePlugin>(
     if (plugin.created) {
       this.created = plugin.created.bind(this);
     }
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } as any;
 }
 
@@ -46,16 +47,18 @@ class AxiosPluginify {
 
   use(...plugins: Array<AxiosPlugin>) {
     for (const plugin of plugins) {
-      if (typeof plugin.beforeCreate === "function") {
+      if (typeof plugin.beforeCreate === 'function') {
         this.beforeCreate.push(
           (config: AxiosRequestConfig, axios: AxiosStatic) =>
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             plugin.beforeCreate(config, axios)
         );
       }
 
-      if (typeof plugin.created === "function") {
+      if (typeof plugin.created === 'function') {
         this.created.push((axios: AxiosInstance, config: AxiosRequestConfig) =>
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           plugin.created(config, axios)
         );
@@ -86,6 +89,7 @@ class AxiosPluginify {
   destroy() {
     this.beforeCreate = [];
     this.created = [];
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     this.config = this.axiosStatic = null;
   }
@@ -94,6 +98,6 @@ class AxiosPluginify {
 export function pluginify(
   axiosStatic: AxiosStatic,
   config: AxiosRequestConfig = {}
-) {
+): AxiosPluginify {
   return new AxiosPluginify(axiosStatic, config);
 }
