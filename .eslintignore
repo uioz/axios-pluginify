@@ -7,5 +7,6 @@ es
 coverage
 #
 .eslintrc.js
+commitlint.config.js
 # types which generate by typescript
 types
