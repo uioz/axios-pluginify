@@ -3,23 +3,28 @@
   "version": "1.0.0",
   "description": "",
   "types": "types",
-  "main": "es",
-  "module": "es",
+  "main": "dist/axios-pluginify.js",
   "files": [
     "dist",
-    "types"
+    "es",
+    "types",
+    "src"
   ],
   "dependencies": {},
   "devDependencies": {
+    "@rollup/plugin-typescript": "^8.2.1",
     "axios": "^0.21.1",
     "axios-cache-adapter": "^2.7.3",
     "axios-mock-adapter": "^1.19.0",
     "axios-retry": "^3.1.9",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.48.0",
+    "tslib": "^2.2.0",
     "typescript": "^4.2.4"
   },
   "scripts": {
     "dev": "tsc -w",
-    "build": "tsc",
+    "build": "rimraf dist es types && tsc && rollup -c rollup.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

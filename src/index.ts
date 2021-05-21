@@ -1,4 +1,5 @@
 import { AxiosStatic, AxiosInstance, AxiosRequestConfig } from "axios";
+export * from "./plugins";
 
 type beforeCreateHook = (
   config: AxiosRequestConfig,
