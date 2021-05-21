@@ -21,6 +21,8 @@
     "axios-retry": "^3.1.9",
     "eslint": "^7.26.0",
     "eslint-config-prettier": "^8.3.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
     "prettier": "^2.3.0",
     "rimraf": "^3.0.2",
     "rollup": "^2.48.0",
@@ -30,7 +32,8 @@
   "scripts": {
     "dev": "tsc -w",
     "build": "rimraf dist es types && tsc && rollup -c rollup.config.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
