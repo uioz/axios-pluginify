@@ -24,7 +24,9 @@ export function definePlugin<T extends DefinePlugin>(
     this: AxiosPlugin,
     ...args: Parameters<typeof plugin['apply']>
   ) {
-    plugin.apply.apply(this, args);
+    if (typeof plugin.apply === 'function') {
+      plugin.apply.apply(this, args);
+    }
 
     if (plugin.beforeCreate) {
       this.beforeCreate = plugin.beforeCreate.bind(this);
@@ -60,7 +62,7 @@ class AxiosPluginify {
         this.created.push((axios: AxiosInstance, config: AxiosRequestConfig) =>
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
-          plugin.created(config, axios)
+          plugin.created(axios, config)
         );
       }
     }

@@ -4,6 +4,7 @@
   "description": "",
   "types": "types",
   "main": "dist/axios-pluginify.js",
+  "module": "es",
   "files": [
     "dist",
     "es",
