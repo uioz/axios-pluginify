@@ -43,7 +43,15 @@
     "type": "git",
     "url": "git+https://github.com/uioz/axios-pluginify.git"
   },
-  "keywords": [],
+  "keywords": [
+    "axios",
+    "utils",
+    "plugin",
+    "axios-retry",
+    "axios-cache-adapter",
+    "axios-mock-adapter",
+    "interceptors"
+  ],
   "author": {
     "name": "uioz",
     "url": "https://github.com/uioz",
