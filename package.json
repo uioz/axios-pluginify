@@ -1,0 +1,56 @@
+{
+  "name": "axios-pluginify",
+  "version": "1.0.0",
+  "description": "",
+  "types": "types",
+  "main": "dist/axios-pluginify.js",
+  "module": "es",
+  "files": [
+    "dist",
+    "es",
+    "types",
+    "src"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@rollup/plugin-typescript": "^8.2.1",
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
+    "axios": "^0.21.1",
+    "axios-cache-adapter": "^2.7.3",
+    "axios-mock-adapter": "^1.19.0",
+    "axios-retry": "^3.1.9",
+    "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.48.0",
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.4"
+  },
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "rimraf dist es types && tsc && rollup -c rollup.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uioz/axios-pluginify.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "uioz",
+    "url": "https://github.com/uioz",
+    "email": "hzxbpld@163.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uioz/axios-pluginify/issues"
+  },
+  "homepage": "https://github.com/uioz/axios-pluginify#readme"
+}
