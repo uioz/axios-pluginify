@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/uioz/axios-pluginify/compare/v1.1.1...v1.1.2) (2021-06-07)
+
+
+### Bug Fixes
+
+* add install section ([27ada4f](https://github.com/uioz/axios-pluginify/commit/27ada4f076a2d56a08e0fc4458eecaa84a378c80))
+
 ### [1.1.1](https://github.com/uioz/axios-pluginify/compare/v1.1.0...v1.1.1) (2021-05-25)
 
 
