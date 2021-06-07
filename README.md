@@ -4,6 +4,12 @@
 
 通过这种方式使得 `axios` 可以与其结合的类库例如 `axios-cache-adapter` 以及拦截器功能进行解耦, 让它们更加容易组织和复用.
 
+# Install
+
+```bash
+npm install axios-pluginify
+```
+
 # Usage
 
 **提示**: `axios` (对象)本身可以用于请求也可以通过属性来配置, 同时还支持通过 `create` 方法来创建新的实例 `axios-pluginify` 利用了 `create` 方法, 下面的例子中使用 `axiosInstance` 和 `axiosStatic` 将实例和 `axios` 本身进行区分.
